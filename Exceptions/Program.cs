@@ -60,7 +60,10 @@ public class program
                 dto.Text = text;
                 dto.Result = true;
                 dto.Message = "Success";
-                Console.WriteLine(text);
+                foreach (string word in text)
+                {
+                    Console.WriteLine(word);
+                }
             }
 
             catch  (FileNotFoundException)
@@ -68,6 +71,7 @@ public class program
                 dto.Text = null;
                 dto.Result= false;
                 dto.Message = "File not found";
+                Console.WriteLine(dto.Message);
             }
 
             return dto;
